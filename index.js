@@ -11,6 +11,10 @@ app.use(express.json());
 
 let messages = [];
 
+for (let index = 0; index < 50; index++) {
+    messages.push(`Message ${index}`);
+}
+
 app.get('/', (request, response) => {
     let message = messages[0];
     messages.shift();
