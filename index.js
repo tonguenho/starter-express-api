@@ -12,7 +12,7 @@ app.use(express.json());
 let messages = [];
 
 for (let index = 0; index < 50; index++) {
-    messages.push(`Message ${index}`);
+    messages.push({message: `Message ${index}`});
 }
 
 app.get('/', (request, response) => {
