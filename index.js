@@ -7,8 +7,6 @@ app.use(cors({
     origin: "*",
 }))
 
-app.use(express.json());
-
 let messages = [];
 
 app.get('/', (request, response) => {
@@ -18,7 +16,7 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    let message = request.body;
+    let message = JSON.parse(request.body);
     if(messages.length <= 200){
         messages.push(message);
         response.send(`Ok ${messages}`);
