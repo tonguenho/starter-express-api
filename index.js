@@ -18,15 +18,12 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    console.log("posted");
-    console.log(request.body);
-    response.send(request.body);
-    // let message = JSON.parse(request.body);
-    // if(messages.length <= 200){
-    //     messages.push(message);
-    //     response.send(`Ok ${messages}`);
-    // }else{
-    //     response.send("O limite de mensagens no servidor foi atingido, tente novamente mais tarde.");
+    let message = JSON.parse(request.body);
+    if(messages.length <= 200){
+        messages.push(message);
+        response.send(`Ok ${messages}`);
+    }else{
+        response.send("O limite de mensagens no servidor foi atingido, tente novamente mais tarde.");
     }
     
 })
