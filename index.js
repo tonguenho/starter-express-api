@@ -18,7 +18,7 @@ app.get('/', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    let message = JSON.parse(request.body.message);
+    let message = JSON.parse(request.body);
     if(messages.length <= 200){
         messages.push(message);
         response.send("Ok");
