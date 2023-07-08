@@ -7,7 +7,7 @@ app.use(cors({
     origin: "*",
 }))
 
-app.use(json());
+app.use(express.json());
 
 let messages = [];
 
