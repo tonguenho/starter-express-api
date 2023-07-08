@@ -7,6 +7,8 @@ app.use(cors({
     origin: "*",
 }))
 
+app.use(json());
+
 let messages = [];
 
 app.get('/', (request, response) => {
@@ -17,12 +19,12 @@ app.get('/', (request, response) => {
 
 app.post('/', (request, response) => {
     response.send(request.body);
-    let message = JSON.parse(request.body);
-    if(messages.length <= 200){
-        messages.push(message);
-        response.send(`Ok ${messages}`);
-    }else{
-        response.send("O limite de mensagens no servidor foi atingido, tente novamente mais tarde.");
+    // let message = JSON.parse(request.body);
+    // if(messages.length <= 200){
+    //     messages.push(message);
+    //     response.send(`Ok ${messages}`);
+    // }else{
+    //     response.send("O limite de mensagens no servidor foi atingido, tente novamente mais tarde.");
     }
     
 })
