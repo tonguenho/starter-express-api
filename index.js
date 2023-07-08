@@ -14,7 +14,7 @@ let messages = [];
 app.get('/', (request, response) => {
     let message = messages[0];
     messages.shift();
-    response.send(message);
+    response.send(JSON.stringify(message));
 });
 
 app.post('/', (request, response) => {
