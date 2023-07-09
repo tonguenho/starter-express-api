@@ -21,7 +21,7 @@ app.post('/', (request, response) => {
     let message = request.body;
     if(messages.length <= 200){
         messages.push(message);
-        response.send(`Ok ${messages}`);
+        response.json(messages);
     }else{
         response.send("O limite de mensagens no servidor foi atingido, tente novamente mais tarde.");
     }
