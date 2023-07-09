@@ -9,7 +9,7 @@ app.use(cors({
 
 app.use(express.json());
 
-let messages = [];
+let messages = [{message: "conectado"}, {message: ""}];
 
 app.get('/', (request, response) => {
     let message = messages[0];
