@@ -11,7 +11,7 @@ app.use(express.json());
 
 let messages = [{message: "conectado"}, {message: ""}];
 
-app.get('/', (request, response) => {
+app.get('/getmessages', (request, response) => {
     let message = messages[0];
     response.json(message);
     messages.shift();
