@@ -13,8 +13,8 @@ let messages = [{message: "conectado"}, {message: ""}];
 
 app.get('/', (request, response) => {
     let message = messages[0];
-    messages.shift();
     response.json(message);
+    messages.shift();
 });
 
 app.post('/', (request, response) => {
